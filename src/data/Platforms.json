@@ -1,0 +1,102 @@
+{
+    "platforms": [
+        {
+            "id": 1,
+            "name": "PC",
+            "slug": "pc",
+            "icon": "https://img.icons8.com/metro/452/windows-logo.png",
+            "class": "icon-image"
+        },
+        {
+            "id": 2,
+            "name": "PlayStation",
+            "slug": "playstation",
+            "icon": "https://1000marcas.net/wp-content/uploads/2020/01/PlayStation-Logo.png",
+            "class": "icon-image-playstation"
+        },
+        {
+            "id": 3,
+            "name": "Xbox",
+            "slug": "xbox",
+            "icon": "https://img.icons8.com/metro/452/xbox.png",
+            "class": "icon-image"
+        },
+        {
+            "id": 4,
+            "name": "iOS",
+            "slug": "ios",
+            "icon": "https://cdn.iconscout.com/icon/free/png-512/ios-52-555319.png",
+            "class": "icon-image"
+        },
+        {
+            "id": 8,
+            "name": "Android",
+            "slug": "android",
+            "icon": "https://image.flaticon.com/icons/png/512/61/61120.png",
+            "class": "icon-image"
+        },
+        {
+            "id": 5,
+            "name": "Apple Macintosh",
+            "slug": "mac",
+            "icon": "https://image.flaticon.com/icons/png/512/2/2235.png",
+            "class": "icon-image"
+        },
+        {
+            "id": 6,
+            "name": "Linux",
+            "slug": "linux",
+            "icon": "https://img.icons8.com/metro/452/linux.png",
+            "class": "icon-image"
+        },
+        {
+            "id": 7,
+            "name": "Nintendo",
+            "slug": "nintendo",
+            "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Micrologo_Nintendo.svg/1280px-Micrologo_Nintendo.svg.png",
+            "class": "icon-image-nintendo"
+        },
+        {
+            "id": 9,
+            "name": "Atari",
+            "slug": "atari",
+            "icon": "https://cdn.worldvectorlogo.com/logos/atari-2.svg",
+            "class": "icon-image"
+        },
+        {
+            "id": 10,
+            "name": "Commodore / Amiga",
+            "slug": "commodore-amiga",
+            "icon": "https://img.icons8.com/color/452/commodore-amiga.png",
+            "class": "icon-image-comodoro"
+        },
+        {
+            "id": 11,
+            "name": "SEGA",
+            "slug": "sega",
+            "icon": "https://logos-download.com/wp-content/uploads/2019/11/Sega_Logo_1.png",
+            "class": "icon-image-sega"
+        },
+        {
+            "id": 12,
+            "name": "3DO",
+            "slug": "3do",
+            "icon": "https://logodix.com/logo/1722178.png",
+            "class": "icon-image"
+        },
+        {
+            "id": 13,
+            "name": "Neo Geo",
+            "slug": "neo-geo",
+            "icon": "https://upload.wikimedia.org/wikipedia/commons/d/d6/Neo_Geo_logo.png",
+            "class": "icon-image"
+        },
+        {
+            "id": 14,
+            "name": "Web",
+            "slug": "web",
+            "icon": "https://cdn.icon-icons.com/icons2/1875/PNG/512/web_120072.png",
+            "class": "icon-image"
+        }
+    ]
+}

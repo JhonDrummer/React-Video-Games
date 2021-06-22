@@ -1,0 +1,147 @@
+.sidenav {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    background-color: #111;
+    padding-top: 20px;
+    text-transform: capitalize;
+}
+
+.sidenav ul {
+    list-style-type: none;
+    padding: 0;
+}
+  
+.sidenav a {
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    padding: 20px 15px;
+}
+  
+.sidenav a:hover {
+    color: #f1f1f1;
+    background-color: #8c8b8b;
+}
+  
+.dropdown {
+    font-size: 25px;
+    color: #818181;
+    display: block;
+}
+  
+.dropdown .dropbtn {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    font-size: 25px;
+    border: none;
+    outline: none;
+    color: #818181;
+    padding: 20px 15px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+    text-transform: capitalize;
+    text-align: left;
+    width: 100%;
+}
+  
+.sidenav a:hover, .dropdown:hover .dropbtn {
+    color: #f1f1f1;
+    background-color: #8c8b8b;
+}
+  
+.dropdown-content {
+    background-color: #f9f9f9;
+    min-width: 100%;
+    overflow-y: scroll;
+    height: calc(100vh - 296px);
+    height: -moz-calc(100vh - 296px);
+    height: -webkit-calc(100vh - 296px);
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+  
+.dropdown-content a {
+    color: #818181;
+    text-align: left;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 16px 25px;
+}
+  
+.dropdown-content::-webkit-scrollbar {
+    width: 10px;
+}
+  
+.dropdown-content::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+   
+.dropdown-content::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+  
+.dropdown-content::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}
+  
+.dropdown-content a:hover {
+    background-color: #ababab;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+@media screen and (max-width: 850px) {
+    .sidenav {
+        top: 0;
+        width: 100%;
+        height: 60px;
+        padding: 0px;
+    }
+  
+    .sidenav a {
+        float: left;
+        display: block;
+        text-align: center;
+        padding: 16px 25px;
+    }
+  
+    .dropdown {
+        float: left;
+        overflow: hidden;
+    }
+    
+    .dropdown .dropbtn {
+        align-items: center;
+        padding: 16px 25px;
+    }
+    
+    .sidenav a:hover, .dropdown:hover .dropbtn {
+        color: #f1f1f1;
+        background-color: #8c8b8b;
+    }
+    
+    .dropdown-content {
+        position: absolute;
+        overflow-y: hidden;
+        left: 0;
+        height: auto;
+    }
+    
+    .dropdown-content a {
+        float: left;
+        display: block;
+    }
+    
+    .dropdown-content a:hover {
+        background-color: #ababab;
+    }
+}

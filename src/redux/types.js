@@ -1,0 +1,5 @@
+const ADD_GAME = "ADD_GAME";
+const REMOVE_GAME = "REMOVE_GAME";
+const SET_FILTER = "SET_FILTER";
+
+export { ADD_GAME, REMOVE_GAME, SET_FILTER };

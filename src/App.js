@@ -1,23 +1,33 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+// import GamePage from './components/GamePage';
+// import Games from './components/Games';
+import Menu from './components/Menu';
+import Games from './pages/Games';
+import GamePage from './pages/Game';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <BrowserRouter>
+      <Menu />
+      <Content />
+    </BrowserRouter>
+  );
+}
+
+const Content = () => {
+  return (
+    <div className="main">
+      <main>
+        <Switch>
+          <Route exact path="/" component={Games} />
+          <Route path="/my-games/:type" component={Games} />
+          <Route path="/game-details/:id" component={GamePage} />
+          <Route path="/genre/:idGenre/:genre" component={Games} />
+          <Route path="/platform/:idPlatform/:platform" component={Games} />
+          <Route path="/tag/:idTag/:tag" component={Games} />
+        </Switch>
+      </main>
     </div>
   );
 }

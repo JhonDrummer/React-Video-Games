@@ -1,0 +1,198 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: 33.3% 33.3% 33.3%;
+  }
+  
+  .title {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .title span {
+    text-transform: capitalize;
+    padding: 15px;
+    font-size: 40px;
+  }
+  
+  .title h1 {
+    text-transform: capitalize;
+    padding: 15px;
+    text-align: center;
+  }
+  
+  .grid-item {
+    margin: 5px;
+    font-size: 20px;
+    border-radius: 5px;
+    background-color: #949494;
+    transition: transform .2s;
+  }
+  
+  .grid-item .info {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+  }
+  
+  .rating {
+    border-radius: 10px;
+    padding: 2px 7px;
+    color: white;
+    max-height: 30px;
+  }
+  
+  .high {
+    border: 1px solid #004600;
+    background: green;
+  }
+  
+  .medium-high {
+    border: 1px solid yellow;
+    background: #a2a27d;
+  }
+  
+  .medium-low {
+    border: 1px solid red;
+    background: #bf4d4d;
+  }
+  
+  .low {
+    border: 1px solid #0e0000;
+    background: red;
+  }
+  
+  .info .name {
+    font-size: 20px;
+  }
+  
+  .info .name a {
+    text-decoration: none;
+    color: #3a3535;
+  }
+  
+  .grid-item .card-footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 0px 0px 15px;
+  }
+  
+  .grid-item .icons {
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  
+  .icon-image {
+    width: 25px;
+    filter: invert(25%);
+  }
+  
+  .icon-image-playstation {
+    width: 40px;
+    filter: invert(20%);
+  }
+  
+  .icon-image-nintendo {
+    width: 33px;
+    filter: grayscale(100%);
+  }
+  
+  .icon-image-comodoro {
+    width: 25px;
+    filter: invert(60%) grayscale(100%) brightness(0.5);
+  }
+  
+  .icon-image-sega {
+    width: 30px;
+    filter: invert(55%) grayscale(80%) brightness(0.5);
+  }
+  
+  .image {
+    width: 100%;
+    border-radius: 5px 5px 0px 0px
+  }
+  
+  .favourite button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: white;
+    border-radius: 50%;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 10px 20px -10px;
+  }
+  
+  .favourite button:hover {
+    transform: scale(1.2);
+    transition-duration: 0.15s;
+  }
+  
+  .favourite .no-fav {
+    font-size: 30px;
+    color: #3a3535;
+  }
+  
+  .favourite .fav {
+    font-size: 30px;
+    color: #3a3535;
+  }
+  
+  .grid-item:hover {
+    transform: scale(1.02);
+    background-color: #525252;
+  }
+  
+  .grid-item:hover .icons .icon-image {
+    filter: invert(60%);
+  }
+  
+  .grid-item:hover .icons .icon-image-playstation {
+    filter: invert(60%);
+  }
+  
+  .grid-item:hover .icons .icon-image-nintendo {
+    filter: invert(50%);
+  }
+  
+  .grid-item:hover .icons .icon-image-comodoro {
+    filter: invert(40%) grayscale(80%);
+  }
+  
+  .grid-item:hover .icons .icon-image-sega {
+    filter: invert(55%) grayscale(80%);
+  }
+  
+  .grid-item:hover .info .name a {
+    color: #b9b2b2;
+  }
+  
+  .grid-item:hover .genres span a {
+    color: #b9b2b2;
+  }
+  
+  .grid-item:hover .favourite span {
+    font-size: 30px;
+    color: #b9b2b2;
+  }
+  
+  @media screen and (max-width: 1050px) {
+    .grid-container {
+      display: grid;
+      grid-template-columns: 50% 50%;
+      padding: 5px;
+      border-radius: 5px;
+    }
+  }
+  
+  @media screen and (max-width: 900px) {
+    .grid-container {
+      display: flex;
+      flex-direction: column;
+      padding: 5px;
+      border-radius: 5px;
+    }
+  }
