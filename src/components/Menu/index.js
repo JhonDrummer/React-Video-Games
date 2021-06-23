@@ -27,7 +27,7 @@ const SubMenu = (route) => {
             <button className="dropbtn" onClick={showSidebar}>{route.name} {sidebar ? <FaAngleUp /> : <FaAngleDown />}</button>
             {sidebar ?
                 <ul className="dropdown-content">
-                    {route.submenu.map((obj, i) => <li key={i}><Link onClick={() => showSidebar()} to={{ pathname: `/${route.path}/${obj.id}/${obj.name}` }}>{obj.name}</Link></li>)}
+                    {route.submenu.map((obj, i) => <li key={i}><Link onClick={() => showSidebar()} to={{ pathname: `/${route.path}/${obj.id}/${encodeURIComponent(obj.name)}` }}>{obj.name}</Link></li>)}
                 </ul>
                 : <></>
             }

@@ -62,7 +62,7 @@
   }
   
   .info .name {
-    font-size: 20px;
+    font-size: 25px;
   }
   
   .info .name a {
@@ -177,6 +177,22 @@
   .grid-item:hover .favourite span {
     font-size: 30px;
     color: #b9b2b2;
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+  }
+  
+  .pagination nav a {
+    display: flex;
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #ddd;
   }
   
   @media screen and (max-width: 1050px) {

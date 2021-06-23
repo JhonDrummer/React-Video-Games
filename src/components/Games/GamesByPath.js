@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Card from "./Card";
 import { addGame, removeGame } from "../../redux/actions/Games";
+import { Link } from "react-router-dom";
+import { FaAngleRight, FaAngleLeft } from "react-icons/fa";
 
 const GamesByPath = (info) => {
     const [data, setData] = useState(null);
@@ -44,6 +46,7 @@ const GamesByPath = (info) => {
             const url = info.path;
             // const url = 'https://192.168.0.16/PresupuestoAPI_Des/api/presupuesto/GetPresupuestosPorBolsillo/idBolsillo/1';
             setLoading(true);
+            setError(null);
             fetch(url)
                 .then(response => {
                     if (response.ok) {
@@ -67,11 +70,17 @@ const GamesByPath = (info) => {
     return (
         <article>
             <header className="title">
-                <h1>{info.text}</h1>
+                <h1>{decodeURIComponent(info.text)}</h1>
             </header>
             <section className="grid-container">
                 {data.results.map(game => <Card key={game.id} add={add} remove={remove} validateFavourite={validateFavourite} game={game} />)}
             </section>
+            <footer className="pagination">
+                <nav>
+                    {data.previous ? <Link to={{ pathname: info.routePrev }} ><FaAngleLeft /></Link> : <></>}
+                    {data.next ? <Link to={{ pathname: info.routeNext }} ><FaAngleRight /></Link> : <></>}
+                </nav>
+            </footer>
         </article>
     );
 }

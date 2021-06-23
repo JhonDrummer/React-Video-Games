@@ -7,7 +7,7 @@ const Details = ({ title, arr, path, prop }) => {
                 <>
                     <span>{title}</span>
                     <section className="platforms genres">
-                        {arr.map((obj, i) => <span key={i}>{i > 0 && ", "}<Link to={{ pathname: `/${path}/${prop ? obj[prop].id : obj.id}/${prop ? obj[prop].name : obj.name}` }}>{prop ? obj[prop].name : obj.name}</Link></span>)}
+                        {arr.map((obj, i) => <span key={i}>{i > 0 && ", "}<Link to={{ pathname: `/${path}/${prop ? obj[prop].id : obj.id}/${prop ? encodeURIComponent(obj[prop].name) : encodeURIComponent(obj.name)}` }}>{prop ? obj[prop].name : obj.name}</Link></span>)}
                     </section>
                 </> : <></>}
         </section>

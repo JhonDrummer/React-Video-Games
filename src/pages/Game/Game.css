@@ -4,7 +4,7 @@
   
   .game-card article h1 {
     text-align: center;
-    font-size: 35px;
+    font-size: 50px;
   }
   
   .game-card .info {
@@ -16,6 +16,7 @@
   .game-card .description {
     text-align: justify;
     color: #3a3535;
+    font-size: 22px;
   }
   
   .game-card .details {
