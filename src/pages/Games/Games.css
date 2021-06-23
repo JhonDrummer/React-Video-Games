@@ -106,9 +106,14 @@
     width: 30px;
     filter: invert(55%) grayscale(80%) brightness(0.5);
   }
+
+  .grid-item > figure:first-child {
+    height: 10em;
+  }
   
   .image {
     width: 100%;
+    height: 100%;
     border-radius: 5px 5px 0px 0px
   }
   
@@ -210,5 +215,9 @@
       flex-direction: column;
       padding: 5px;
       border-radius: 5px;
+    }
+
+    .grid-item > figure:first-child {
+      height: 100%;
     }
   }
