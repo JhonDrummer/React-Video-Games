@@ -43,7 +43,7 @@ const Slideshow = ({ id }) => {
         }
     }
 
-    if (loading) return (<div className="title"><div className="loader"></div></div>);
+    if (loading) return <></>;
     if (error) return "Error!";
 
     return (

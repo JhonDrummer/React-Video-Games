@@ -1,7 +1,5 @@
 import './App.css';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-// import GamePage from './components/GamePage';
-// import Games from './components/Games';
 import Menu from './components/Menu';
 import Games from './pages/Games';
 import GamePage from './pages/Game';
