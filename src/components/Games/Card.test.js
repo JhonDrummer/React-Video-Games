@@ -4,7 +4,7 @@ import responseAll from './../../mockup-data/response.json';
 import { BrowserRouter } from "react-router-dom";
 import Card from "./Card";
 
-test("Validate ParentPlatforms Content", async () => {
+test("Validate Card Content", async () => {
     const game = responseAll.results[0];
     const add = () => {
     }

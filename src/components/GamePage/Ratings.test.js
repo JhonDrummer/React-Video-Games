@@ -2,7 +2,7 @@ import { render } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import Ratings from "./Ratings";
 
-test("Validate link routes exist", async () => {
+test("Validate Ratings content", async () => {
     const ratings = [
         { id: 4, title: "recommended", count: 1154, percent: 55.27 },
         { id: 5, title: "exceptional", count: 558, percent: 26.72 },

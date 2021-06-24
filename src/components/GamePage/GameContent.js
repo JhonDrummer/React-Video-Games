@@ -2,7 +2,6 @@ import properties from './../../data/Properties.json';
 import Ratings from "./Ratings";
 import Details from "./Details";
 import { useState, useEffect } from "react";
-import GamesSection from '../GamesSection';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { addGame, removeGame } from '../../redux/actions/Games';
@@ -74,18 +73,10 @@ const GameContent = ({ id }) => {
                 <Details title="Platforms" arr={game.platforms} path="platform" prop="platform" />
                 <Details title="Genres" arr={game.genres} path="genre" />
             </section>
-            <GameSeries id={id} />
             <footer>
                 <Details title="Tags" arr={game.tags} path="tag" />
             </footer>
         </article>
-    );
-}
-
-const GameSeries = ({ id }) => {
-    const info = { path: `${properties.url}/${id}/game-series?key=${properties.key}`, individual: true };
-    return (
-        <GamesSection info={info} />
     );
 }
 

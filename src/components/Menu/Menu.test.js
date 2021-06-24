@@ -1,7 +1,7 @@
 import Menu from ".";
 import { fireEvent, render, act } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 
 test("Validate link routes exist", async () => {
     const RouterMock = ({ children }) => <BrowserRouter>{children}</BrowserRouter>;
@@ -70,8 +70,8 @@ test("when user clicks on 'Platforms' it should appear submenu with Platforms", 
     });
     
     expect(container).toHaveTextContent(/platforms/);
-    expect(getByText("PlayStation 5")).toHaveAttribute("href", "/platform/187/PlayStation 5");
+    expect(getByText("PlayStation 5")).toHaveAttribute("href", "/platform/187/PlayStation%205");
     expect(getByText("PSP")).toHaveAttribute("href", "/platform/17/PSP");
     expect(getByText("Linux")).toHaveAttribute("href", "/platform/6/Linux");
-    expect(getByText("Xbox Series S/X")).toHaveAttribute("href", "/platform/186/Xbox Series S/X");
+    expect(getByText("Xbox Series S/X")).toHaveAttribute("href", "/platform/186/Xbox%20Series%20S%2FX");
 });

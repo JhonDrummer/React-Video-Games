@@ -13,7 +13,7 @@ test("Validate Details for Platforms", async () => {
     expect(container).toHaveTextContent("Xbox 360");
     expect(container).toHaveTextContent("Linux");
     expect(container).toHaveTextContent("Xbox One");
-    expect(getByText("PlayStation 3")).toHaveAttribute("href", "/platform/16/PlayStation 3");
+    expect(getByText("PlayStation 3")).toHaveAttribute("href", "/platform/16/PlayStation%203");
     expect(getByText("PC")).toHaveAttribute("href", "/platform/4/PC");
     expect(getByText("macOS")).toHaveAttribute("href", "/platform/5/macOS");
 });
@@ -40,7 +40,7 @@ test("Validate Details for Tags", async () => {
     expect(container).toHaveTextContent("Multiplayer");
     expect(container).toHaveTextContent("Steam Cloud");
     expect(container).toHaveTextContent("cooperative");
-    expect(getByText("Steam Achievements")).toHaveAttribute("href", "/tag/40847/Steam Achievements");
+    expect(getByText("Steam Achievements")).toHaveAttribute("href", "/tag/40847/Steam%20Achievements");
     expect(getByText("Atmospheric")).toHaveAttribute("href", "/tag/13/Atmospheric");
     expect(getByText("Co-op")).toHaveAttribute("href", "/tag/18/Co-op");
     expect(getByText("First-Person")).toHaveAttribute("href", "/tag/8/First-Person");
