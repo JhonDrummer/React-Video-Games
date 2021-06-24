@@ -1,19 +1,18 @@
 .game-card {
     font-size: 20px;
   }
+
+  .game-card article > header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
   
   .game-card article h1 {
-    text-align: center;
     font-size: 50px;
   }
   
-  .game-card .info {
-    display: flex;
-    justify-content: center;
-    font-size: 50px;
-  }
-  
-  .game-card .description {
+  .game-card p {
     text-align: justify;
     color: #3a3535;
     font-size: 22px;
@@ -88,16 +87,6 @@
     opacity: 1;
   }
   
-  /* .game-card .details .left {
-    display: flex;
-    justify-content: left;
-  } */
-  
-  /* 
-  .game-card .details .left .content .platforms {
-    word-break: break-all;
-  } */
-  
   .ratings-content {
     display: flex;
     justify-content: space-evenly;
@@ -159,4 +148,19 @@
   
   .count-skip {
     background-color: #d66d6d;
+  }
+
+  .subtitle {
+    display: flex;
+    justify-content: flex-start;
+  }
+  
+  .subtitle h2 {
+    text-transform: capitalize;
+    padding: 15px;
+    font-size: 35px;
+  }
+
+  .game-card footer {
+    padding: 25px 0;
   }

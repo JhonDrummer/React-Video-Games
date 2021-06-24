@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
-// import responseShortById from './../../mockup-data/response-short-by-id.json';
 import properties from './../../data/Properties.json';
 
 const Slideshow = ({ id }) => {
@@ -8,12 +7,10 @@ const Slideshow = ({ id }) => {
     const [slideIndex, setSlideIndex] = useState(0);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-    let pathByIdScreen = `${properties.url}/${id}/screenshots?key=${properties.key}`;
-    console.log(pathByIdScreen);
     const url = `${properties.url}/${id}/screenshots?key=${properties.key}`;
-    // const url = 'https://192.168.0.16/PresupuestoAPI_Des/api/presupuesto/GetPresupuestosPorBolsillo/idBolsillo/2';
 
     useEffect(() => {
+        setLoading(true);
         fetch(url)
             .then(response => {
                 if (response.ok) {
@@ -23,7 +20,6 @@ const Slideshow = ({ id }) => {
             }).then(data => {
                 setScreenshots(data);
                 console.log(data);
-                // setScreenshots(responseShortById);
             }).catch(error => {
                 setError(error);
             }).finally(() => {

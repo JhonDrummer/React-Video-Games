@@ -1,19 +1,47 @@
-// import responseById from './../../mockup-data/response-by-id.json';
 import properties from './../../data/Properties.json';
 import Ratings from "./Ratings";
 import Details from "./Details";
 import { useState, useEffect } from "react";
+import GamesSection from '../GamesSection';
+import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { addGame, removeGame } from '../../redux/actions/Games';
+import { FaRegHeart, FaHeart } from 'react-icons/fa';
 
 const GameContent = ({ id }) => {
     const [game, setGame] = useState(null);
     const [loadingGame, setLoadingGame] = useState(true);
     const [error, setError] = useState(null);
-    let pathById = `${properties.url}/${id}?key=${properties.key}`;
-    console.log(pathById);
     const url = `${properties.url}/${id}?key=${properties.key}`;
-    // const url = 'https://192.168.0.16/PresupuestoAPI_Des/api/presupuesto/GetPresupuestosPorBolsillo/idBolsillo/1';
 
+    const games = useSelector((state) => state.todos);
+    const dispatch = useDispatch();
+
+    const add = (game) => {
+        dispatch(addGame(game));
+    }
+
+    const remove = (id) => {
+        dispatch(removeGame(id));
+    }
+
+    const validateFavourite = (id) => {
+        if (games.find(q => q.id === id)) {
+            return true;
+        }
+        return false;
+    }
+
+    const makeFavourite = (game) => {
+        if (validateFavourite(game.id)) {
+            remove(game.id);
+        } else {
+            add(game);
+        }
+    }
+ 
     useEffect(() => {
+        setLoadingGame(true);
         fetch(url)
             .then(response => {
                 if (response.ok) {
@@ -23,7 +51,6 @@ const GameContent = ({ id }) => {
             }).then(data => {
                 setGame(data);
                 console.log(data);
-                // setGame(responseById);
             }).catch(error => {
                 setError(error);
             }).finally(() => {
@@ -37,17 +64,28 @@ const GameContent = ({ id }) => {
         <article>
             <header>
                 <h1>{game.name}</h1>
+                <section className="favourite">
+                    <button data-testid="fav-button" onClick={() => makeFavourite(game)}>{validateFavourite(game.id) ? <FaHeart data-testid="fav" /> : <FaRegHeart data-testid="not-fav" />}</button>
+                </section>
             </header>
-            <p className="description">{game.description_raw}</p>
+            <section dangerouslySetInnerHTML={{__html: game.description}}></section>
             <Ratings ratings={game.ratings} />
             <section className="details">
                 <Details title="Platforms" arr={game.platforms} path="platform" prop="platform" />
                 <Details title="Genres" arr={game.genres} path="genre" />
             </section>
+            <GameSeries id={id} />
             <footer>
                 <Details title="Tags" arr={game.tags} path="tag" />
             </footer>
         </article>
+    );
+}
+
+const GameSeries = ({ id }) => {
+    const info = { path: `${properties.url}/${id}/game-series?key=${properties.key}`, individual: true };
+    return (
+        <GamesSection info={info} />
     );
 }
 
